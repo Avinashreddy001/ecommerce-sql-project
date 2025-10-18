@@ -1,7 +1,7 @@
--- E-COMMERCE ORDER MANAGEMENT SYSTEM - SQLite
+-- E-COMMERCE ORDER MANAGEMENT SYSTEM
 -- Sample Data
 
--- Insert Customers
+--Customers
 INSERT INTO customers (first_name, last_name, email, phone, country, city) VALUES
 ('Rajesh', 'Kumar', 'rajesh.kumar@email.com', '9876543210', 'India', 'Telangana'),
 ('Priya', 'Singh', 'priya.singh@email.com', '9876543211', 'India', 'Mumbai'),
@@ -11,7 +11,7 @@ INSERT INTO customers (first_name, last_name, email, phone, country, city) VALUE
 ('Sarah', 'Johnson', 'sarah.johnson@email.com', '9876543215', 'USA', 'Los Angeles'),
 ('Ravi', 'Verma', 'ravi.verma@email.com', '9876543216', 'India', 'Pune');
 
--- Insert Categories
+--Categories
 INSERT INTO categories (category_name, description) VALUES
 ('Electronics', 'Electronic devices and gadgets'),
 ('Clothing', 'Apparel and fashion items'),
@@ -19,7 +19,7 @@ INSERT INTO categories (category_name, description) VALUES
 ('Home & Garden', 'Home improvement and garden supplies'),
 ('Sports', 'Sports equipment and fitness gear');
 
--- Insert Products
+--Products
 INSERT INTO products (product_name, category_id, price, stock_quantity, description) VALUES
 ('Laptop', 1, 45000.00, 15, 'High performance laptop for professionals'),
 ('Smartphone', 1, 25000.00, 30, 'Latest smartphone with 5G support'),
@@ -34,7 +34,7 @@ INSERT INTO products (product_name, category_id, price, stock_quantity, descript
 ('Dumbbell Set', 5, 1999.00, 20, 'Home gym dumbbell set 5kg to 25kg'),
 ('Coffee Maker', 4, 2499.00, 15, 'Automatic coffee maker with timer');
 
--- Insert Orders
+--Orders
 INSERT INTO orders (customer_id, order_date, total_amount, order_status, payment_status, shipping_address) VALUES
 (1, '2025-10-01 10:30:00', 46299.00, 'delivered', 'paid', '123 Main St, Hyderabad'),
 (2, '2025-10-05 14:20:00', 50000.00, 'shipped', 'paid', '456 Park Ave, Mumbai'),
@@ -45,7 +45,7 @@ INSERT INTO orders (customer_id, order_date, total_amount, order_status, payment
 (6, '2025-10-17 15:45:00', 2499.00, 'pending', 'unpaid', '888 Hollywood Blvd, Los Angeles'),
 (7, '2025-10-18 09:00:00', 6298.00, 'processing', 'paid', '555 Market St, Pune');
 
--- Insert Order Items
+--Order Items
 INSERT INTO order_items (order_id, product_id, quantity, unit_price, discount_percent) VALUES
 (1, 1, 1, 45000.00, 0),
 (1, 4, 2, 499.00, 10),
@@ -59,7 +59,7 @@ INSERT INTO order_items (order_id, product_id, quantity, unit_price, discount_pe
 (8, 8, 1, 399.00, 5),
 (8, 11, 1, 1999.00, 0);
 
--- Insert Payments
+--Payments
 INSERT INTO payments (order_id, payment_method, amount, payment_date, transaction_id) VALUES
 (1, 'credit_card', 46299.00, '2025-10-01 10:35:00', 'TXN001'),
 (2, 'debit_card', 50000.00, '2025-10-05 14:25:00', 'TXN002'),
@@ -68,7 +68,7 @@ INSERT INTO payments (order_id, payment_method, amount, payment_date, transactio
 (6, 'paypal', 3500.00, '2025-10-16 13:35:00', 'TXN006'),
 (8, 'credit_card', 2398.00, '2025-10-18 09:05:00', 'TXN008');
 
--- Insert Reviews
+--Reviews
 INSERT INTO reviews (product_id, customer_id, order_id, rating, review_text) VALUES
 (1, 1, 1, 5, 'Excellent laptop, great performance and build quality'),
 (4, 1, 1, 4, 'Good quality t-shirt, fits perfectly'),
@@ -77,7 +77,7 @@ INSERT INTO reviews (product_id, customer_id, order_id, rating, review_text) VAL
 (3, 5, 6, 5, 'Perfect sound quality, very comfortable to wear'),
 (8, 7, 8, 4, 'Great book, very informative');
 
--- Insert Inventory Log
+--inventory_log
 INSERT INTO inventory_log (product_id, quantity_changed, log_type, reference_id) VALUES
 (1, -1, 'purchase', 1),
 (4, -2, 'purchase', 1),
