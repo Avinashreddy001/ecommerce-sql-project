@@ -239,12 +239,3 @@ A: Yes, with minimal syntax changes (mostly date functions and GENERATED ALWAYS 
 
 ---
 
-## 📄 License
-
-This project is open source and available for portfolio use.
-
----
-
-**Created for:** Portfolio Development
-**Last Updated:** October 2025
-**Status:** Complete & Ready for Production
