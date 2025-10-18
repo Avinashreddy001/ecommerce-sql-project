@@ -226,12 +226,15 @@ This project showcases:
 ## 📞 Questions & Troubleshooting
 
 **Q: How do I view the database structure in VS Code?**
+
 A: Use `.schema` command in terminal or right-click `ecommerce.db` with SQLite extension
 
 **Q: Can I modify the data?**
+
 A: Yes! Use INSERT, UPDATE, DELETE statements. Always backup before major changes.
 
 **Q: How do I reset the database?**
+
 A: Delete `ecommerce.db` and re-run schema.sql and sample_data.sql
 
 **Q: Can this be converted to MySQL/PostgreSQL?**
