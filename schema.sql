@@ -1,7 +1,7 @@
--- E-COMMERCE ORDER MANAGEMENT SYSTEM - SQLite
+-- E-COMMERCE ORDER MANAGEMENT SYSTEM
 -- Schema and Tables
 
--- Create Customers table
+-- Creating Customers table
 CREATE TABLE IF NOT EXISTS customers (
     customer_id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS customers (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create Categories table
+-- Creating Categories table
 CREATE TABLE IF NOT EXISTS categories (
     category_id INTEGER PRIMARY KEY AUTOINCREMENT,
     category_name TEXT NOT NULL UNIQUE,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS categories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create Products table
+-- Creating Products table
 CREATE TABLE IF NOT EXISTS products (
     product_id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_name TEXT NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS products (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
--- Create Orders table
+-- Creating Orders table
 CREATE TABLE IF NOT EXISTS orders (
     order_id INTEGER PRIMARY KEY AUTOINCREMENT,
     customer_id INTEGER NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
--- Create Order Items table
+-- Creating Order Items table
 CREATE TABLE IF NOT EXISTS order_items (
     order_item_id INTEGER PRIMARY KEY AUTOINCREMENT,
     order_id INTEGER NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS order_items (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- Create Payments table
+-- Creating Payments table
 CREATE TABLE IF NOT EXISTS payments (
     payment_id INTEGER PRIMARY KEY AUTOINCREMENT,
     order_id INTEGER UNIQUE NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS payments (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
--- Create Reviews table
+-- Creating Reviews table
 CREATE TABLE IF NOT EXISTS reviews (
     review_id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_id INTEGER NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS reviews (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
--- Create Inventory Log table
+-- Creating Inventory Log table
 CREATE TABLE IF NOT EXISTS inventory_log (
     log_id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_id INTEGER NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS inventory_log (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- Create indexes for better query performance
+-- Creating indexes for better query performance
 CREATE INDEX IF NOT EXISTS idx_customer_email ON customers(email);
 CREATE INDEX IF NOT EXISTS idx_customer_country ON customers(country);
 CREATE INDEX IF NOT EXISTS idx_product_category ON products(category_id);
