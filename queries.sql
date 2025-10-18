@@ -1,6 +1,4 @@
--- E-COMMERCE ORDER MANAGEMENT SYSTEM - SQLite
--- Advanced Analysis Queries
-
+-- E-COMMERCE ORDER MANAGEMENT SYSTEM
 -- Query 1: Total Sales by Category
 
 SELECT 
